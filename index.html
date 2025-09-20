@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Starlight Weaver: A Tale of Lost Constellations</title>
+    <meta name="description" content="Follow Elara, the last Weaver, on her quest to find the primordial First Star and rekindle the dying cosmos.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Fixed Navigation -->
+    <nav class="nav-fixed" id="navigation">
+        <div class="nav-container">
+            <div class="nav-logo">Starlight Weaver</div>
+            <ul class="nav-links">
+                <li><a href="#hero" data-section="hero">Beginning</a></li>
+                <li><a href="#weaver" data-section="weaver">The Weaver</a></li>
+                <li><a href="#quest" data-section="quest">The Quest</a></li>
+                <li><a href="#journey" data-section="journey">Journey</a></li>
+                <li><a href="#revelation" data-section="revelation">Revelation</a></li>
+                <li><a href="#choice" data-section="choice">Choice</a></li>
+                <li><a href="#epilogue" data-section="epilogue">Epilogue</a></li>
+            </ul>
+        </div>
+        <div class="nav-indicator"></div>
+    </nav>
+
+    <!-- Hero Section: The Fading Sky -->
+    <section id="hero" class="hero-section">
+        <div class="starfield"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-char">T</span>
+                <span class="title-char">h</span>
+                <span class="title-char">e</span>
+                <span class="title-char"> </span>
+                <span class="title-char">S</span>
+                <span class="title-char">t</span>
+                <span class="title-char">a</span>
+                <span class="title-char">r</span>
+                <span class="title-char">l</span>
+                <span class="title-char">i</span>
+                <span class="title-char">g</span>
+                <span class="title-char">h</span>
+                <span class="title-char">t</span>
+                <span class="title-char"> </span>
+                <span class="title-char">W</span>
+                <span class="title-char">e</span>
+                <span class="title-char">a</span>
+                <span class="title-char">v</span>
+                <span class="title-char">e</span>
+                <span class="title-char">r</span>
+            </h1>
+            <p class="hero-subtitle">A Tale of Lost Constellations</p>
+        </div>
+        <div class="scroll-indicator">
+            <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- The Weaver: Introduction -->
+    <section id="weaver" class="weaver-section">
+        <div class="container">
+            <div class="weaver-grid">
+                <div class="weaver-text">
+                    <h2 class="section-title">The Last Weaver</h2>
+                    <p class="section-content">
+                        In the dying light of a cosmos grown cold, Elara stands as the final guardian of an ancient art. 
+                        The Starlight Weavers once danced between worlds, threading luminous paths through the void, 
+                        binding distant suns with silver strands of pure starlight.
+                    </p>
+                    <p class="section-content">
+                        But the stars are fading now, one by one, their light consumed by an encroaching darkness that 
+                        devours all it touches. The great tapestry of the universe unravels, and with it, the very 
+                        fabric of existence itself.
+                    </p>
+                </div>
+                <div class="weaver-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&crop=face" 
+                         alt="Elara, the last Starlight Weaver" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Quest: The Inciting Incident -->
+    <section id="quest" class="quest-section">
+        <div class="container">
+            <div class="quest-content">
+                <h2 class="section-title">The Ancient Prophecy</h2>
+                <p class="section-content centered">
+                    Deep within the Observatory of Echoes, Elara discovers a fragment of the First Codex—a tome 
+                    written in starlight itself. Its pages speak of the primordial "First Star," the original 
+                    spark from which all light was born.
+                </p>
+                <p class="section-content centered">
+                    Legend tells that this First Star still burns somewhere beyond the edge of known space, 
+                    waiting for one brave enough to seek it. Only by finding this source of all light can 
+                    the dying cosmos be rekindled.
+                </p>
+                
+                <!-- SVG Star Path Animation -->
+                <svg class="star-path" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="motion-path" d="M50,200 Q200,50 400,200 T750,200" fill="none"/>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <path d="M50,200 Q200,50 400,200 T750,200" stroke="#4cc9f0" stroke-width="2" fill="none" opacity="0.3"/>
+                    <g class="star-traveler" filter="url(#glow)">
+                        <polygon points="0,-8 2.4,-2.4 8,0 2.4,2.4 0,8 -2.4,2.4 -8,0 -2.4,-2.4" 
+                                 fill="#ffd166" stroke="#4cc9f0" stroke-width="1"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Journey: Parallax Scrolling -->
+    <section id="journey" class="journey-section">
+        <!-- Ancient Library -->
+        <div class="journey-panel" data-bg="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&h=1080&fit=crop">
+            <div class="journey-card">
+                <h3 class="journey-title">The Library of Whispers</h3>
+                <p class="journey-text">
+                    Elara's quest begins in the ancient Library of Whispers, where the accumulated knowledge 
+                    of a thousand civilizations lies dormant. Here, she deciphers the star-maps of old, 
+                    tracing the paths that lead beyond the known universe.
+                </p>
+            </div>
+        </div>
+
+        <!-- Snowy Mountains -->
+        <div class="journey-panel" data-bg="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop">
+            <div class="journey-card">
+                <h3 class="journey-title">The Peaks of Solitude</h3>
+                <p class="journey-text">
+                    Through the crystalline peaks where the air grows thin and the boundary between 
+                    earth and sky dissolves, Elara climbs toward the first waypoint. Each step brings 
+                    her closer to the edge of the world.
+                </p>
+            </div>
+        </div>
+
+        <!-- Glowing River -->
+        <div class="journey-panel" data-bg="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop">
+            <div class="journey-card">
+                <h3 class="journey-title">The River of Stars</h3>
+                <p class="journey-text">
+                    At the world's edge flows a river of liquid starlight, its waters carrying the 
+                    dreams of sleeping constellations. Elara must cross these luminous currents to 
+                    reach the void beyond.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Revelation: Climax -->
+    <section id="revelation" class="revelation-section">
+        <div class="container">
+            <div class="revelation-content">
+                <h2 class="section-title shimmer">The First Star</h2>
+                
+                <!-- Animated Crystal SVG -->
+                <div class="crystal-container">
+                    <svg class="crystal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="crystal-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4cc9f0;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#7b4bcf;stop-opacity:0.8" />
+                            </linearGradient>
+                            <linearGradient id="crystal-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffd166;stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:#4cc9f0;stop-opacity:0.6" />
+                            </linearGradient>
+                            <filter id="crystal-glow">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <g class="crystal-core" filter="url(#crystal-glow)">
+                            <polygon class="crystal-facet" points="100,20 140,60 100,100 60,60" fill="url(#crystal-gradient-1)" stroke="#f8fafc" stroke-width="1"/>
+                            <polygon class="crystal-facet" points="100,100 140,140 100,180 60,140" fill="url(#crystal-gradient-2)" stroke="#f8fafc" stroke-width="1"/>
+                            <polygon class="crystal-facet" points="60,60 100,100 60,140 20,100" fill="url(#crystal-gradient-1)" stroke="#f8fafc" stroke-width="1"/>
+                            <polygon class="crystal-facet" points="140,60 180,100 140,140 100,100" fill="url(#crystal-gradient-2)" stroke="#f8fafc" stroke-width="1"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <p class="section-content centered">
+                    In the heart of the cosmic void, Elara discovers the truth that will reshape everything. 
+                    The First Star was never lost—it lives within every Weaver, waiting to be awakened. 
+                    The power to rekindle the universe has always been hers to command.
+                </p>
+                <p class="section-content centered">
+                    But with this revelation comes a choice that will determine the fate of all existence. 
+                    The path forward splits into two possibilities, each carrying its own profound consequence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Choice: Interactive Element -->
+    <section id="choice" class="choice-section">
+        <div class="container">
+            <h2 class="section-title">The Moment of Decision</h2>
+            <p class="choice-prompt">
+                Standing at the crossroads of destiny, Elara must choose how to use the power of the First Star:
+            </p>
+            
+            <div class="choice-cards">
+                <div class="choice-card" data-choice="rekindle">
+                    <div class="choice-icon">✨</div>
+                    <h3 class="choice-title">Rekindle the Stars</h3>
+                    <p class="choice-description">
+                        Use the First Star's power to reignite every dying sun, restoring the cosmos to its 
+                        former glory but potentially burning out her own light forever.
+                    </p>
+                    <button class="choice-button magnetic-btn">Choose Sacrifice</button>
+                </div>
+                
+                <div class="choice-card" data-choice="transform">
+                    <div class="choice-icon">🌟</div>
+                    <h3 class="choice-title">Transform the Universe</h3>
+                    <p class="choice-description">
+                        Merge with the First Star to become a new kind of cosmic force, creating a universe 
+                        where light and darkness exist in perfect harmony.
+                    </p>
+                    <button class="choice-button magnetic-btn">Choose Transformation</button>
+                </div>
+            </div>
+            
+            <div class="choice-result" id="choice-result"></div>
+        </div>
+    </section>
+
+    <!-- Epilogue: Call to Action -->
+    <section id="epilogue" class="epilogue-section">
+        <div class="container">
+            <div class="epilogue-content">
+                <h2 class="section-title">Your Journey Begins</h2>
+                <p class="section-content centered">
+                    Every ending is a new beginning. Like Elara, you have the power to weave light into 
+                    the darkness, to create something beautiful from the void. The stars are waiting 
+                    for your story.
+                </p>
+                
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Enter your email to join the constellation" required>
+                        <button type="submit" class="submit-btn magnetic-btn">
+                            <span class="btn-text">Weave Your Light</span>
+                            <span class="btn-glow"></span>
+                        </button>
+                    </div>
+                </form>
+                
+                <p class="epilogue-note">
+                    Join our constellation of storytellers and be the first to discover new tales 
+                    of wonder and magic.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
